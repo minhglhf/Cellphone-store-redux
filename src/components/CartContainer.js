@@ -19,21 +19,28 @@ const CartContainer = ({ cart = [], total, dispatch }) => {
     );
   }
   return (
-    <section className="cart-container">
-      <div className="cart-child-container">
+    <>
+      <section className="cart-container">
+        <div className="cart-child-container">
+          
+          <header>
+          <div className="cover-image">
+            <img src="/images/p4.jpg" alt="phone" style={{
+              width: "100vw", height: "30rem", objectFit: "cover", margin: "0",
+              borderTop: "3px #68bbeb solid", zIndex: "-999"
+            }} />
+          </div>
+            <h1 style={{marginTop: "2rem"}}>Products</h1>
+          </header>
 
-        <header>
-          <h1>Products</h1>
-        </header>
+          <article >
+            {cart.map(item => {
+              return <CartItem key={item.id} {...item} />;
+            })}
+          </article>
 
-        <article >
-          {cart.map(item => {
-            return <CartItem key={item.id} {...item} />;
-          })}
-        </article>
- 
-        <footer>
-          {/* <div className="cart-total">
+          <footer>
+            {/* <div className="cart-total">
             <h4>
               total <span>${total}</span>
             </h4>
@@ -46,10 +53,12 @@ const CartContainer = ({ cart = [], total, dispatch }) => {
               clear cart
           </button>
           </div> */}
-        </footer>
-      </div>
+          </footer>
+        </div>
 
-    </section>
+      </section>
+
+    </>
   );
 };
 

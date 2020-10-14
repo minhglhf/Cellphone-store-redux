@@ -1,24 +1,44 @@
-nav {
+*, html {
+    margin:0;
+    padding:0;  
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav {
     background-color:   #f1f5f8;
     /* padding: 1.25rem 2rem; */
     margin: 0;
-    /* width: 100vw; */
+    width: 100vw;
+
+    height: 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 99;
 }
 
 .nav-center {
     background-color:   #f1f5f8;
     width: 100%;
     margin: 0 auto;
+    padding: .8rem 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    /* position: fixed;
+    z-index: 1;*/
+    border: 3px #5fb7ea solid; 
+    box-sizing: border-box;
+    
 }
 
 .nav-container {
     background-color:   #f1f5f8;
 }
 
-nav svg {
+.nav svg {
     width: 2rem;
     fill: black;
 }
@@ -42,7 +62,7 @@ nav svg {
     justify-content: center;
 }
 
-nav h3 {
+.cellphone {
     font-family: Open Sans,sans-serif!important;
     letter-spacing: .5rem;
     font-weight: 700;
@@ -58,3 +78,82 @@ nav h3 {
     font-size: 2rem;
     cursor: pointer;
 }
+
+.sidebar {
+    display: flex;
+    transition: all .5s;
+    width: 30rem;
+    background-color: #f1f5f8;
+    z-index: 999;
+    height: 50rem;
+    border: 3px #5fb7ea solid;
+    position: fixed;
+    right: 0;
+    top: 4.1rem;
+    bottom: 0;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.sidebar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+   
+.sidebar::-webkit-scrollbar-thumb {
+    background: #5e5e5f; 
+    border-radius: 10px;
+}
+
+
+
+.sidebar-item {
+    width: 100%;
+   
+    padding: 1rem;
+    display: flex;
+
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.sidebar > h2 {
+    margin: auto;
+    color: #5fb7ea;
+}
+
+.amount-btn {
+    width: 1.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+.amount-btn svg {
+    fill: #2680c0;
+}
+
+.amount-btn:hover svg {
+    fill: #5fb7ea;
+}
+
+.amount {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 1.25rem;
+    line-height: 1;
+}
+  
+
+
+
+
+

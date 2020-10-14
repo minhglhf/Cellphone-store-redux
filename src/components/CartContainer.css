@@ -1,3 +1,8 @@
+*, html {
+    margin:0;
+    padding:0;  
+}
+
 * {
     background-color: #f1f5f8;
 }
@@ -21,6 +26,7 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .cart-child-container > footer {
@@ -41,3 +47,8 @@
 h1 {
     font-size: 3rem;
 }
+
+/* .cover-image {
+    position: relative;
+} */
+

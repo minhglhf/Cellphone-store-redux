@@ -1,8 +1,14 @@
+*, html {
+    margin:0;
+    padding:0;  
+    
+}
+
 .cart-item {
     width: 20rem;
     height: 26rem;
     margin: 2rem;
-    border: 1px green solid;
+    border: 1px #5fb7ea solid;
     box-shadow: 10px 10px 5px #aaaaaa;
     cursor: pointer;
     position: relative;
@@ -55,7 +61,8 @@
 
 .cart-item > img {
     margin: 1rem 0;
-    width: 20rem;
+    width: 19rem;
+    object-fit: cover;
 }
 
 .item-price {
@@ -71,3 +78,4 @@
 .cart-item-info > h4 {
     margin: 1rem;
 }
+
