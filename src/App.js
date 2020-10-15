@@ -19,7 +19,7 @@ import CartContainer from "./components/CartContainer";
 
 
 //createStore(reducer, initialStore)
-
+import { BrowserRouter as Router } from 'react-router-dom';
 import { createStore } from "redux";
 import reducer from "./reducer";
 // react-redux - Provider - wraps app , connect - used in components
@@ -34,10 +34,13 @@ const store = createStore(
 
 function App() {
   return (
-    <Provider store={store}>
+    <Router>
+      <Provider store={store}>
       <Navbar />
       <CartContainer />
     </Provider>
+    </Router>
+    
   );
 }
 

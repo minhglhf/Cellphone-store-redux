@@ -2,7 +2,8 @@ import React from 'react';
 import CartItem from "./CartItem";
 import './CartContainer.css';
 import CartItems from "../cart-items";
-const CartContainer = ({ cart = [] }) => {
+import Footer from './Footer';
+const CartContainer = () => {
   
   return (
     <>
@@ -26,13 +27,11 @@ const CartContainer = ({ cart = [] }) => {
             })}
           </article>
 
-          <footer>
-            
-          </footer>
+          
         </div>
 
       </section>
-
+      <Footer />
     </>
   );
 };
