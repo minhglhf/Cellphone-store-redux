@@ -5,13 +5,19 @@ import {
   TOGGLE_AMOUNT,
   ADD_TO_LIST
 } from "../actions";
+
+
+
 const CartItem = ({
   img,
   title,
   price,
   toggle,
-  addList
+  addList,
+  dispatch
 }) => {
+
+
   return (
     <div className="cart-item">
       <img src={img} alt={title} />
@@ -42,6 +48,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     
   };
 };
+
+
 
 export default connect(null, mapDispatchToProps)(CartItem);
 

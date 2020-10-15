@@ -16,7 +16,7 @@ const initialStore = {
 };
 
 const reducer = (state = initialStore, action) => {
-  
+  console.log(state.cart);
   if (action.type === CLEAR_CART) {
     return { ...state, cart: [] };
   }
@@ -27,6 +27,12 @@ const reducer = (state = initialStore, action) => {
       cart: state.cart.filter(cartItem => cartItem.id !== action.payload.id)
     };
   }
+  // if (action.type === ADD_TO_LIST) {
+  //   return {
+  //     ...state,
+  //     cart: state.cart.filter(cartItem => cartItem.id === action.payload.id)
+  //   };
+  // }
   if (action.type === GET_TOTALS) {
 
     let { total, amount } = state.cart.reduce(
@@ -80,15 +86,32 @@ const reducer = (state = initialStore, action) => {
   if (action.type === ADD_TO_LIST) {
     if (!state.cart.find(x => x.id === action.payload.id)) {
 
-
-
-      state.cart.push(cartItems.find(x => x.id === action.payload.id));
-     
-      console.log(state.cart);
+      let newObj = [...state.cart];
+      newObj.push(cartItems.filter((cartItem) => cartItem.id === action.payload.id)[0]);
+      console.log(newObj);
       return ({
           ...state,
-          cart: state.cart
-        });
+          cart: newObj
+      });
+    }
+    else if (state.cart.find(x => x.id === action.payload.id)) {
+      let temp = { ...state.cart };
+      temp = {
+        ...state,
+        cart: state.cart.map(cartItem => {
+          if (cartItem.id === action.payload.id) {
+            return (cartItem = { ...cartItem, amount: cartItem.amount + 1 });
+          }
+          // const { price, amount } = cartItem;
+          // const itemTotal = price * amount;
+  
+          // cartItem.total += itemTotal;
+          // cartItem.amount += amount;
+          return cartItem;
+        })
+      }
+
+      return temp;
     }
   }
   return state;
