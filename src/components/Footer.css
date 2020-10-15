@@ -3,6 +3,8 @@
     display: flex;
     justify-content: center;
     border-top: 2px #5fb7ea solid;
+    
+    bottom: 0;
 }
 
 .footer-container{
