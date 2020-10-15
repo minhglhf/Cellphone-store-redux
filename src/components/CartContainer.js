@@ -1,23 +1,9 @@
-import React from "react";
+import React from 'react';
 import CartItem from "./CartItem";
-import { connect } from "react-redux";
-import { CLEAR_CART, GET_TOTALS } from "../actions";
 import './CartContainer.css';
-const CartContainer = ({ cart = [], total, dispatch }) => {
-  React.useEffect(() => {
-    dispatch({ type: GET_TOTALS });
-  }, [cart, dispatch]);
-  if (cart.length === 0) {
-    return (
-      <section className="cart">
-        {/* cart header */}
-        <header>
-          <h2>your bag</h2>
-          <h4 className="empty-cart">is currently empty</h4>
-        </header>
-      </section>
-    );
-  }
+import CartItems from "../cart-items";
+const CartContainer = ({ cart = [] }) => {
+  
   return (
     <>
       <section className="cart-container">
@@ -34,25 +20,14 @@ const CartContainer = ({ cart = [], total, dispatch }) => {
           </header>
 
           <article >
-            {cart.map(item => {
+           
+            {CartItems.map(item => {
               return <CartItem key={item.id} {...item} />;
             })}
           </article>
 
           <footer>
-            {/* <div className="cart-total">
-            <h4>
-              total <span>${total}</span>
-            </h4>
-          </div>
-          <div>
-            <button
-              className="btn clear-btn"
-              onClick={() => dispatch({ type: CLEAR_CART })}
-            >
-              clear cart
-          </button>
-          </div> */}
+            
           </footer>
         </div>
 
@@ -62,8 +37,4 @@ const CartContainer = ({ cart = [], total, dispatch }) => {
   );
 };
 
-const mapStateToProps = store => {
-  const { cart, total } = store;
-  return { cart, total };
-}
-export default connect(mapStateToProps)(CartContainer);
+export default CartContainer;
