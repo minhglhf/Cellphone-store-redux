@@ -100,4 +100,11 @@
     font-size: 1.25rem;
     line-height: 1;
 }
+
+.search-area {
+    width: 100%;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+}
   

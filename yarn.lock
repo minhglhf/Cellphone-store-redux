@@ -2935,6 +2935,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.3:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+
 clean-css@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.2.3.tgz#507b5de7d97b48ee53d84adb0160ff6216380f78"
@@ -4902,6 +4907,11 @@ globby@^6.1.0:
     object-assign "^4.0.1"
     pify "^2.0.0"
     pinkie-promise "^2.0.0"
+
+goober@^2.0.4:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-2.0.8.tgz#3ccdc1e4ea437f9e4d665e5454ae15f72fed1152"
+  integrity sha512-DgYVFNZnto5ikeI0y39l5iaM2jottzFIAVwfqvidOI1TCnJxfLgw93X3UGXvDmcCXSDgI5WFJMtol6vYc07lMQ==
 
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.2.0, graceful-fs@^4.2.2:
   version "4.2.3"
@@ -8657,6 +8667,13 @@ react-dom@^16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
+react-dropdown@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/react-dropdown/-/react-dropdown-1.9.0.tgz#405d0c580ec4ba276091e059ee9c278f75caeb96"
+  integrity sha512-BDApCUhs0qHqnFW3b54SuqI200FOOsmiy0dejdmtdTn/MMY11jcou3CLX1oT2Qa1PdN7viTyAGT8YCpK5qb9xg==
+  dependencies:
+    classnames "^2.2.3"
+
 react-error-overlay@^6.0.7:
   version "6.0.7"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.7.tgz#1dcfb459ab671d53f660a991513cb2f0a0553108"
@@ -8678,6 +8695,13 @@ react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-i
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-multi-select-component@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/react-multi-select-component/-/react-multi-select-component-3.0.4.tgz#3e2d6f0c978d4f40b8b97bb425fa77adc374f302"
+  integrity sha512-0qpp+2A+4UABLmhdP8gZBItPq+BAZEH6G+3OCCNyFMgfnNY3ZsJclxKOnOFOxvk2DcATRIbekXk2LaLQ+5d5QA==
+  dependencies:
+    goober "^2.0.4"
 
 react-redux@^7.2.1:
   version "7.2.1"

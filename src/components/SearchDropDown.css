@@ -1,0 +1,50 @@
+.brand-dropdown {
+    width: 20rem;
+    cursor: pointer;
+}
+
+.multiselect {
+    cursor: pointer;
+}
+
+select {
+    
+    
+    /* -webkit-appearance:none; */
+
+}
+
+.styled-select {
+    /* border: 1px solid; */
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+  
+.styled-select select {
+    font-size: 1rem;
+    font-family: Cursive;
+    /* margin: 1rem; */
+    border-radius: 10px;
+    border: 2px black solid;
+    width: 15rem;
+    cursor: pointer;
+}
+
+.brands-search {
+    display: flex;
+    flex-direction: column;
+}
+
+.brands-search > label {
+    font-weight: bold;
+    margin: .5rem;
+    cursor: pointer;
+}
+
+option {
+    cursor: pointer;
+}
+

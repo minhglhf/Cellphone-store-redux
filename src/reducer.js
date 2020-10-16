@@ -12,7 +12,8 @@ import cartItems from "./cart-items";
 const initialStore = {
   cart: [],
   total: 0,
-  amount: 0
+  amount: 0,
+  isOpenSidebar: false
 };
 
 const reducer = (state = initialStore, action) => {
@@ -112,6 +113,12 @@ const reducer = (state = initialStore, action) => {
       }
 
       return temp;
+    }
+  }
+  if(action.type === "OPEN_CART"){
+    return {
+      ...state,
+      isOpenSidebar: !state.isOpenSidebar
     }
   }
   return state;

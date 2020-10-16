@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {  useEffect } from "react";
 import { connect } from "react-redux";
 import './Navbar.css';
 import './SidebarCartItem.css'
@@ -6,15 +6,13 @@ import SidebarCartItem from "./SidebarCartItem";
 import { GET_TOTALS } from "../actions";
 import { TiShoppingCart } from 'react-icons/ti';
 
-const Navbar = ({  cart, total, dispatch }) => {
-  const [isOpenNavbar, setIsOpenNavbar] = useState(false);
+const Navbar = ({  cart, total, isOpenSidebar, openCart, getTotals }) => {
 
   console.log(cart);
 
   useEffect(() => {
-    dispatch({ type: GET_TOTALS });
-
-  }, [cart, dispatch]);
+    getTotals();
+  });
 
   return (
     <div className="nav">
@@ -23,14 +21,14 @@ const Navbar = ({  cart, total, dispatch }) => {
           <h3 className="cellphone">CellPhone</h3>
         </div>
 
-        <div className="nav-container" onClick={() => setIsOpenNavbar(!isOpenNavbar)}>
+        <div className="nav-container" onClick={openCart}>
           <TiShoppingCart className='cart-icon'  />
         </div>
 
       </div>
 
       {
-        (isOpenNavbar) ? (
+        isOpenSidebar &&
           <div id="sidebar" className="sidebar" >
 
             <h2 className="cart-lists">Cart lists</h2>
@@ -51,7 +49,7 @@ const Navbar = ({  cart, total, dispatch }) => {
 
             <h2 className="total">Total: ${total}</h2>
           </div>
-        ) : (null)
+      
       }
 
     </div>
@@ -60,7 +58,14 @@ const Navbar = ({  cart, total, dispatch }) => {
 
 
 const mapStateToProps = store => {
-  const { cart, total } = store;
-  return { cart, total };
+  const { cart, total ,isOpenSidebar} = store;
+  return { cart, total ,isOpenSidebar};
 }
-export default connect(mapStateToProps)(Navbar);
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+      openCart: () => dispatch({type: "OPEN_CART"}),
+      getTotals: () => dispatch({ type: GET_TOTALS })
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);

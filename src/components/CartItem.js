@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import './CartItem.css';
 import {
-  TOGGLE_AMOUNT,
+  
   ADD_TO_LIST
 } from "../actions";
 
@@ -47,8 +47,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
   return {
     addList: () => dispatch({ type: ADD_TO_LIST, payload: { id } }),
-    toggle: (toggle) => dispatch({ type: TOGGLE_AMOUNT, payload: { id, toggle } })
-
   };
 };
 

@@ -8,8 +8,8 @@ import {
 } from "../actions";
 import './SidebarCartItem.css';
 import {
-    TiDeleteOutline
-} from 'react-icons/ti';
+    FaRegTrashAlt
+} from 'react-icons/fa';
 const SidebarCartItem = ({
     img,
     title,
@@ -41,8 +41,8 @@ const SidebarCartItem = ({
 
             <div>
 
-            <div className="delete">
-                    <TiDeleteOutline style={{ fontSize: "2rem", color: "#5fb7ea", cursor:"pointer" }} onClick={() => remove()}/>
+                <div className="delete">
+                    <FaRegTrashAlt style={{ fontSize: "1.5rem", color: "#5fb7ea", cursor: "pointer" }} onClick={() => remove()} />
                 </div>
                 <button className="amount-btn" onClick={() => toggle("inc")}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -56,7 +56,6 @@ const SidebarCartItem = ({
                         if (amount === 1) {
                             return remove();
                         } else {
-
                             return toggle("dec");
                         }
                     }}
@@ -66,8 +65,6 @@ const SidebarCartItem = ({
                     </svg>
 
                 </button>
-
-                
 
             </div>
         </div>
