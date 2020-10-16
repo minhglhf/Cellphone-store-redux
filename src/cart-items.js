@@ -1,74 +1,74 @@
 export default [
   {
     id: 1,
-    title: "Samsung Galaxy S7",
+    title: "Samsung Galaxy A21s",
     price: 599.99,
     img:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583368215/phone-2_ohtt5s.png",
+      "https://cdn.tgdd.vn/Products/Images/42/219314/samsung-galaxy-a21s-055620-045627-400x460.png",
     amount: 1
   },
   {
     id: 2,
-    title: "google pixel ",
+    title: "iPhone 11 Pro 64GB",
     price: 499.99,
     img:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583371867/phone-1_gvesln.png",
+      "https://cdn.tgdd.vn/Products/Images/42/188705/iphone-11-pro-black-400x460.png",
     amount: 1
   },
   {
     id: 3,
-    title: "Xiaomi Redmi Note 2",
+    title: "Samsung Galaxy A70",
     price: 699.99,
     img:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583368224/phone-3_h2s6fo.png",
+      "https://cdn.tgdd.vn/Products/Images/42/195012/samsung-galaxy-a70-052920-062956-400x460.png",
     amount: 1
   },
   {
     id: 4,
-    title: "Samsung Galaxy S7",
+    title: "OPPO Reno4",
     price: 599.99,
     img:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583368215/phone-2_ohtt5s.png",
+      "https://cdn.tgdd.vn/Products/Images/42/222596/oppo-reno4-260720-040737-400x460.png",
     amount: 1
   },
   {
     id: 5,
-    title: "google pixel ",
+    title: "Samsung Galaxy Z Fold2 5G",
     price: 499.99,
     img:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583371867/phone-1_gvesln.png",
+      "https://cdn.tgdd.vn/Products/Images/42/226099/samsung-galaxy-z-fold-2-061220-021202-400x460.png",
     amount: 1
   },
   {
     id: 6,
-    title: "Xiaomi Redmi Note 2",
+    title: "Vsmart Aris",
     price: 699.99,
     img:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583368224/phone-3_h2s6fo.png",
+      "https://cdn.tgdd.vn/Products/Images/42/228530/vsmart-aris-181920-121945-400x460.png",
     amount: 1
   },
   {
     id: 7,
-    title: "google pixel ",
+    title: "Nokia 5.3",
     price: 499.99,
     img:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583371867/phone-1_gvesln.png",
+      "https://cdn.tgdd.vn/Products/Images/42/219477/nokia-53-den-400x460-400x460.png",
     amount: 1
   },
   {
     id: 8,
-    title: "Xiaomi Redmi Note 2",
+    title: "Samsung Galaxy Note 20",
     price: 699.99,
     img:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583368224/phone-3_h2s6fo.png",
+      "https://cdn.tgdd.vn/Products/Images/42/218355/samsung-galaxy-note-20-xanhla-400x460-400x460.png",
     amount: 1
   },
   {
     id: 9,
-    title: "google pixel ",
+    title: "Vivo X50 Pro",
     price: 499.99,
     img:
-      "https://res.cloudinary.com/diqqf3eq2/image/upload/v1583371867/phone-1_gvesln.png",
+      "https://cdn.tgdd.vn/Products/Images/42/223290/vivo-x50-pro-155920-035924-400x460.png",
     amount: 1
   },
   

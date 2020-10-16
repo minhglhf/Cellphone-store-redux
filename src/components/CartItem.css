@@ -63,10 +63,19 @@
     transform: scale(1.1); 
   }
 
-.cart-item > img {
-    margin: 1rem 0;
-    width: 19rem;
+.cart-item > div > img {
+    /* margin: 1rem 0; */
+    width: 15rem;
+    height: auto;
     object-fit: cover;
+}
+
+.iteminfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
 }
 
 .item-price {
@@ -74,6 +83,7 @@
 }
 
 .cart-item-info {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;

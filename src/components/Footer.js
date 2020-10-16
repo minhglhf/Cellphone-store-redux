@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import {
     FaFacebook,
     FaInstagram,
@@ -8,7 +8,8 @@ import {
     FaPhone
 } from 'react-icons/fa';
 import {
-    AiOutlineMail
+    AiOutlineMail,
+    AiOutlineTwitter
 } from 'react-icons/ai';
 
 const Footer = () => {
@@ -54,6 +55,19 @@ const Footer = () => {
                             aria-label='Github'
                         >
                             <FaGithub style={{ color: "black" }} />
+                        </a>
+                    </div>
+                    <div>
+                        <a
+                            className='social-icon-link'
+                            href={
+                                'https://twitter.com/MINHTRA43983002'
+                            }
+                            target='_blank'
+                            rel="noopener noreferrer"
+                            aria-label='Twitter'
+                        >
+                            <AiOutlineTwitter style={{ color: "#00acee" }} />
                         </a>
                     </div>
 

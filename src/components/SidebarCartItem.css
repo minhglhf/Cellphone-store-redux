@@ -1,7 +1,7 @@
 .sidebar {
     display: flex;
     transition: all .5s;
-    width: 25rem;
+    width: 20rem;
     background-color: #f1f5f8;
     z-index: -1;
     height: 100vh;
