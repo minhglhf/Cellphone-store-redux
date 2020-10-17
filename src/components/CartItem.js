@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import './CartItem.css';
+import { Link } from 'react-router-dom';
 import {
   
   ADD_TO_LIST
@@ -31,7 +32,11 @@ const CartItem = ({
 
       <div className="overlay">
         <div className="but">
-          <button className="btn">View detail</button>
+          <Link to="/detail">
+            <button className="btn">View detail</button>
+          </Link>
+          
+          
         </div>
         <div className="but">
           <button className="btn" onClick={() => addList()}>add to cart</button>

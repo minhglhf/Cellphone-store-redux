@@ -13,7 +13,8 @@ const initialStore = {
   cart: [],
   total: 0,
   amount: 0,
-  isOpenSidebar: false
+  isOpenSidebar: false,
+  isOpenMenu: false
 };
 
 const reducer = (state = initialStore, action) => {
@@ -119,6 +120,13 @@ const reducer = (state = initialStore, action) => {
     return {
       ...state,
       isOpenSidebar: !state.isOpenSidebar
+    }
+  }
+
+  if(action.type === "OPEN_MENU"){
+    return {
+      ...state,
+      isOpenMenu: !state.isOpenMenu
     }
   }
   return state;

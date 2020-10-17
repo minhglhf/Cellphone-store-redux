@@ -1,0 +1,42 @@
+.sidebar-menu {
+    display: flex;
+    transition: all .5s;
+    width: 20rem;
+    background-color: #f1f5f8;
+    z-index: -1;
+    height: 100vh;
+    border: 3px #5fb7ea solid;
+    position: fixed;
+    left: 0;
+    /* top: 4.1rem; */
+    bottom: 0;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: flex-start; 
+    flex-direction: column;
+ 
+}
+
+.menu {
+    height: 100vh;
+    width: 100%;
+    margin-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.link {
+    margin: .5rem;
+    font-size: 3rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #5fb7ea;
+    width: 15rem;
+    text-align: center;
+}
+
+.link:hover {
+    transform: scale(1.1); 
+}

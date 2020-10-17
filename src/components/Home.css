@@ -1,0 +1,55 @@
+body, html {
+    height: 100%;
+    margin: 0;
+}
+  
+.home-container {
+    min-height: 100vh;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+     transform: translate(-50%, -50%); 
+    z-index: 10;
+    background: transparent;
+    opacity: 1;
+  }
+
+.hero-text> h1{
+    background: transparent;
+    position: relative;
+    /* animation-name: example;
+    animation-duration: 2s; */
+    font-weight: bold;
+    font-size: 7rem;
+    color: white;
+    font-family: cursive;
+}
+
+.hero-text> p{
+    background: transparent;
+    font-size: 3rem;
+    font-family: monospace;
+}
+  
+.hero-text button {
+    border: none;
+    outline: 1px black solid;
+    outline-offset: .2rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    color: white;
+    background-color: black;
+    text-align: center;
+    cursor: pointer;
+    
+}
+  
+.hero-text button:hover {
+    background-color: #555;
+    color: white;
+}

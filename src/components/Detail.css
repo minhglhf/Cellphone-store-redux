@@ -1,0 +1,10 @@
+*, html {
+    margin:0;
+    padding:0; 
+    background-color:  #f1f5f8; 
+}
+
+.detail-container {
+    min-height: 100vh;
+    margin-top: 10rem;
+}

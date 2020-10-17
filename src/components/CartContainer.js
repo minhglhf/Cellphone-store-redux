@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import CartItem from "./CartItem";
 import './CartContainer.css';
 import CartItems from "../cart-items";
-import Footer from './Footer';
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 import Search from './Search'
 
 const CartContainer = () => {
@@ -34,6 +35,7 @@ const CartContainer = () => {
 
   return (
     <>
+      <Navbar />
       <section className="cart-container">
         <div className="cart-child-container">
 
@@ -87,7 +89,10 @@ const CartContainer = () => {
         </div>
 
       </section>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
+      
     </>
   );
 };

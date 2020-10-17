@@ -1,9 +1,10 @@
 import React from "react";
 // components
-import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 import CartContainer from "./components/CartContainer";
+import Detail from "./components/Detail";
 // items
-
+import { Switch, Route } from 'react-router-dom'
 // redux stuff
 
 //store: store data, think of state
@@ -36,11 +37,17 @@ function App() {
   return (
     <Router>
       <Provider store={store}>
-      <Navbar />
-      <CartContainer />
-    </Provider>
+        <Switch>
+          
+          <Route path="/detail" exact={true} component={Detail} />
+          <Route path="/products" exact={true} component={CartContainer} />
+          <Route path="/" exact={true} component={Home} />
+          
+        </Switch>
+
+      </Provider>
     </Router>
-    
+
   );
 }
 
