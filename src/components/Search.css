@@ -7,13 +7,6 @@
     cursor: pointer;
 }
 
-select {
-    
-    
-    /* -webkit-appearance:none; */
-
-}
-
 .styled-select {
     /* border: 1px solid; */
     border-radius: 10px;
@@ -27,7 +20,7 @@ select {
     font-size: 1rem;
     font-family: Cursive;
     /* margin: 1rem; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
     border: 2px black solid;
     width: 15rem;
     cursor: pointer;
@@ -38,7 +31,7 @@ select {
     flex-direction: column;
 }
 
-.brands-search > label {
+label {
     font-weight: bold;
     margin: .5rem;
     cursor: pointer;
@@ -47,4 +40,26 @@ select {
 option {
     cursor: pointer;
 }
+
+input[type=text]{
+    font-size: 1rem;
+    font-family: Cursive;
+    /* margin: 1rem; */
+    /* border-radius: 10px; */
+    border: 2px black solid;
+    width: 15rem;
+    cursor: pointer;
+}
+
+input[type=text]:focus{
+    /* border-radius: 10px; */
+    border: 2px black solid;
+}
+
+
+input[value]{
+    padding-left: 1rem;
+ 
+}
+
 

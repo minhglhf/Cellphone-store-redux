@@ -3,14 +3,22 @@ import CartItem from "./CartItem";
 import './CartContainer.css';
 import CartItems from "../cart-items";
 import Footer from './Footer';
-import SearchDropDown from './SearchDropDown'
+import Search from './Search'
 
 const CartContainer = () => {
   const [brand, setBrand] = useState('All');
+  const [search, setSearch] = useState('');
+
+  console.log(search)
   const handleChange = (e) => {
     setBrand(e.target.value);
+
   }
-  console.log(brand);
+
+  const handleChangeSearch = (e) => {
+    setSearch(e.target.value);
+  }
+
   return (
     <>
       <section className="cart-container">
@@ -27,7 +35,10 @@ const CartContainer = () => {
           </header>
 
           <div className="search-area">
-            <SearchDropDown brand={brand} handleChange={handleChange} />
+            <Search brand={brand} handleChange={handleChange} 
+              search={search} handleChangeSearch={handleChangeSearch}
+            />
+
           </div>
 
           <article >
@@ -35,13 +46,16 @@ const CartContainer = () => {
             {
               (brand === 'All') ? (
                 CartItems.map(item => {
-                      return (
-                        <CartItem key={item.id} {...item} />
-                      );
-                  })
+                  if (item.title.toUpperCase().indexOf(search.toUpperCase()) !== -1) {
+                    return (
+                      <CartItem key={item.id} {...item} />
+                    );
+                  }
+                  return null;
+                })
               ) : (
                   CartItems.map(item => {
-                    if (item.brand === brand) {
+                    if (item.brand === brand && item.title.toUpperCase().indexOf(search.toUpperCase()) !== -1) {
                       return (
                         <CartItem key={item.id} {...item} />
                       );

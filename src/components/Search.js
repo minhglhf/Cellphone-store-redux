@@ -1,9 +1,21 @@
-import  React from 'react';
-import './SearchDropDown.css'
+import React from 'react';
+import './Search.css'
 
-const SearchDropDown = ({brand, handleChange}) => {
+const Search = ({ brand,search, handleChange, handleSubmit, handleChangeSearch }) => {
+    
     return (
+
+
         <div className="styled-select">
+            <form  onSubmit={handleSubmit}>
+                <div className="brands-search">
+                    <label htmlFor="search">Search: </label>
+                    <input type="text" id="search" placeholder="search" name="search" value={search}
+                        onChange={handleChangeSearch}
+                    />
+                </div>
+            </form>
+
             <div className="brands-search">
                 <label htmlFor="brands">Brands: </label>
                 <select id="brands" value={brand} onChange={handleChange}>
@@ -22,4 +34,4 @@ const SearchDropDown = ({brand, handleChange}) => {
 
 }
 
-export default SearchDropDown;
+export default Search;
