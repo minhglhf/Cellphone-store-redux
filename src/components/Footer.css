@@ -3,11 +3,16 @@
     display: flex;
     justify-content: center;
     border-top: 2px #5fb7ea solid;
-    
+    height: 4rem;
     bottom: 0;
+    left: 0;
+    right: 0;
+
 }
 
 .footer-container{
+    bottom: 0;
+    height: 4rem;
     width: 90rem;
     background-color: #f1f5f8;
     display: flex;

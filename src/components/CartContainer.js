@@ -8,15 +8,28 @@ import Search from './Search'
 const CartContainer = () => {
   const [brand, setBrand] = useState('All');
   const [search, setSearch] = useState('');
+  const [sort, setSort] = useState('low to high');
 
-  console.log(search)
+  console.log(sort)
   const handleChange = (e) => {
     setBrand(e.target.value);
-
   }
 
   const handleChangeSearch = (e) => {
     setSearch(e.target.value);
+  }
+
+  const handleChangeSort = (e) => {
+    setSort(e.target.value);
+  }
+
+  const handleSort = (a, b) => {
+    if(sort==="low to high"){
+      return a - b;
+    }
+    if(sort==="high to low"){
+      return b - a;
+    }
   }
 
   return (
@@ -35,8 +48,9 @@ const CartContainer = () => {
           </header>
 
           <div className="search-area">
-            <Search brand={brand} handleChange={handleChange} 
+            <Search brand={brand} handleChange={handleChange}
               search={search} handleChangeSearch={handleChangeSearch}
+              sort={sort} handleChangeSort={handleChangeSort}
             />
 
           </div>
@@ -44,8 +58,9 @@ const CartContainer = () => {
           <article >
 
             {
+        
               (brand === 'All') ? (
-                CartItems.map(item => {
+                CartItems.sort((a, b) => handleSort(a.price, b.price)).map(item => {
                   if (item.title.toUpperCase().indexOf(search.toUpperCase()) !== -1) {
                     return (
                       <CartItem key={item.id} {...item} />
@@ -53,8 +68,10 @@ const CartContainer = () => {
                   }
                   return null;
                 })
+
               ) : (
-                  CartItems.map(item => {
+         
+                  CartItems.sort((a, b) => handleSort(a.price, b.price)).map(item => {
                     if (item.brand === brand && item.title.toUpperCase().indexOf(search.toUpperCase()) !== -1) {
                       return (
                         <CartItem key={item.id} {...item} />
@@ -62,7 +79,7 @@ const CartContainer = () => {
                     }
                     return null;
                   })
-                )
+                ) 
             }
           </article>
 

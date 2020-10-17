@@ -1,7 +1,7 @@
 import React from 'react';
 import './Search.css'
 
-const Search = ({ brand,search, handleChange, handleSubmit, handleChangeSearch }) => {
+const Search = ({ brand,search, handleChange, handleSubmit, handleChangeSearch, sort, handleChangeSort }) => {
     
     return (
 
@@ -26,6 +26,14 @@ const Search = ({ brand,search, handleChange, handleSubmit, handleChangeSearch }
                     <option value="Vsmart">Vsmart</option>
                     <option value="Vivo">Vivo</option>
                     <option value="Nokia">Nokia</option>
+                </select>
+            </div>
+
+            <div className="brands-search">
+                <label htmlFor="sort">Sort by: </label>
+                <select id="sort" value={sort} onChange={handleChangeSort}>
+                    <option value="low to high">low to high</option>
+                    <option value="high to low">high to low</option>
                 </select>
             </div>
 
