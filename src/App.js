@@ -39,7 +39,7 @@ function App() {
       <Provider store={store}>
         <Switch>
           
-          <Route path="/detail" exact={true} component={Detail} />
+          <Route path="/detail/:id" exact={true} children={<Detail />} />
           <Route path="/products" exact={true} component={CartContainer} />
           <Route path="/" exact={true} component={Home} />
           

@@ -11,7 +11,7 @@ const CartContainer = () => {
   const [search, setSearch] = useState('');
   const [sort, setSort] = useState('low to high');
 
-  console.log(sort)
+
   const handleChange = (e) => {
     setBrand(e.target.value);
   }
@@ -65,7 +65,7 @@ const CartContainer = () => {
                 CartItems.sort((a, b) => handleSort(a.price, b.price)).map(item => {
                   if (item.title.toUpperCase().indexOf(search.toUpperCase()) !== -1) {
                     return (
-                      <CartItem key={item.id} {...item} />
+                      <CartItem key={item.id} {...item} id={item.id}/>
                     );
                   }
                   return null;

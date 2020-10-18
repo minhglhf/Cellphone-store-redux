@@ -19,6 +19,7 @@
     display: flex;
     padding: 1rem;
     justify-content: space-around;
+    align-items: center;
     
 }
 
@@ -36,16 +37,21 @@
     font-size: 2rem;
 }
 
-.info {
+.inffo {
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
     width: 30rem;
-}
+    padding: 0;
+  
+}   
 
 .infoo {
     display: flex;
-    align-items: center;
+
     margin: 0 1rem;
     font-size: 1.1rem;
+    
+
 }
 

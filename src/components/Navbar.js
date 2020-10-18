@@ -11,7 +11,7 @@ import SidebarMenu from "./SidebarMenu";
 
 const Navbar = ({ cart, total, isOpenSidebar, openCart, getTotals, openMenu, isOpenMenu }) => {
 
-  console.log(cart);
+  
 
   useEffect(() => {
     getTotals();
@@ -46,7 +46,7 @@ const Navbar = ({ cart, total, isOpenSidebar, openCart, getTotals, openMenu, isO
         <div id="sidebar" className="sidebar" >
 
           <h2 className="cart-lists">Cart lists</h2>
-          {console.log(cart)}
+          {/* {console.log(cart)} */}
 
           <div className="sidebar-item-container">
             {

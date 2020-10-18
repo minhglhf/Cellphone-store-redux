@@ -16,7 +16,7 @@ const Footer = () => {
     return (
         <div className='footer-con-container'>
             <div className='footer-container'>
-                <div className="info">
+                <div className="inffo">
                     <div className="infoo"><FaPhone />0916001201</div>
                     <div className="infoo"><AiOutlineMail />minhtq30102000@gmail.com</div>
                 </div>

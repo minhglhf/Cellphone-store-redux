@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import './CartItem.css';
 import { Link } from 'react-router-dom';
 import {
-  
   ADD_TO_LIST
 } from "../actions";
 
@@ -15,8 +14,10 @@ const CartItem = ({
   price,
   toggle,
   addList,
-  dispatch
+  dispatch,
+  id
 }) => {
+ 
 
 
   return (
@@ -32,7 +33,7 @@ const CartItem = ({
 
       <div className="overlay">
         <div className="but">
-          <Link to="/detail">
+          <Link to={`/detail/${id}`}  >
             <button className="btn">View detail</button>
           </Link>
           
@@ -49,6 +50,7 @@ const CartItem = ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   const { id } = ownProps;
+  
 
   return {
     addList: () => dispatch({ type: ADD_TO_LIST, payload: { id } }),

@@ -6,9 +6,7 @@ const SidebarMenu = () => {
     return (
         <div className="menu">
            <Link className="link" to='/' >Home</Link>
-
            <Link className="link" to='/products' >Products</Link>
-           <Link className="link" to='/about' >About</Link>
         </div>
     )
 }

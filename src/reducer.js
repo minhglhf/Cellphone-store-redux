@@ -18,7 +18,7 @@ const initialStore = {
 };
 
 const reducer = (state = initialStore, action) => {
-  console.log(state.cart);
+  // console.log(state.cart);
   if (action.type === CLEAR_CART) {
     return { ...state, cart: [] };
   }
@@ -86,11 +86,12 @@ const reducer = (state = initialStore, action) => {
   }
 
   if (action.type === ADD_TO_LIST) {
+    console.log(action.payload.id)
     if (!state.cart.find(x => x.id === action.payload.id)) {
 
       let newObj = [...state.cart];
       newObj.push(cartItems.filter((cartItem) => cartItem.id === action.payload.id)[0]);
-      console.log(newObj);
+      // console.log(newObj);
       return ({
           ...state,
           cart: newObj
