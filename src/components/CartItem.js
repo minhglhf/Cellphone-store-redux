@@ -15,9 +15,8 @@ const CartItem = ({
   toggle,
   addList,
   dispatch,
-  id
+  id,
 }) => {
- 
 
 
   return (

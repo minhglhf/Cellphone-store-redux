@@ -14,7 +14,10 @@ const initialStore = {
   total: 0,
   amount: 0,
   isOpenSidebar: false,
-  isOpenMenu: false
+  isOpenMenu: false,
+  brand: "All",
+  search: "",
+  sort: "low to high"
 };
 
 const reducer = (state = initialStore, action) => {
@@ -130,6 +133,25 @@ const reducer = (state = initialStore, action) => {
       isOpenMenu: !state.isOpenMenu
     }
   }
+  if(action.type === "CHANGE_BRAND"){
+    return {
+      ...state,
+      brand: action.payload.brand
+    }
+  }
+  if(action.type === "CHANGE_SEARCH"){
+    return {
+      ...state,
+      search: action.payload.search
+    }
+  }
+  if(action.type === "CHANGE_SORT"){
+    return {
+      ...state,
+      sort: action.payload.sort
+    }
+  }
+
   return state;
 }
 

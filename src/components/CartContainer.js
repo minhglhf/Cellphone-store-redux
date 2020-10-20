@@ -1,39 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CartItem from "./CartItem";
+import { connect } from "react-redux";
 import './CartContainer.css';
 import CartItems from "../cart-items";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import Search from './Search'
+import Search from './Search';
+import Pagination from "./Pagination";
 
-const CartContainer = () => {
-  const [brand, setBrand] = useState('All');
-  const [search, setSearch] = useState('');
-  const [sort, setSort] = useState('low to high');
+const CartContainer = ({ brand, search, sort }) => {
 
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(9);
 
-  const handleChange = (e) => {
-    setBrand(e.target.value);
-  }
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
-  const handleChangeSearch = (e) => {
-    setSearch(e.target.value);
-  }
-
-  const handleChangeSort = (e) => {
-    setSort(e.target.value);
-  }
+  const [currentlength, setCurrentLength] = useState(CartItems.length);
 
   const handleSort = (a, b) => {
-    if(sort==="low to high"){
+    if (sort === "low to high") {
       return a - b;
     }
-    if(sort==="high to low"){
+    if (sort === "high to low") {
       return b - a;
     }
   }
 
+  const [currentItem, setCurrentItem] = useState([]);
+
+  useEffect(() => {
+    if (brand === 'All') {
+      setCurrentItem(CartItems.slice(indexOfFirstItem, indexOfLastItem));
+      setCurrentLength(CartItems.length);
+    }
+    else {
+      setCurrentItem(CartItems.filter((item) => item.brand === brand).slice(indexOfFirstItem, indexOfLastItem));
+      setCurrentLength(CartItems.filter((item) => item.brand === brand).slice(indexOfFirstItem, indexOfLastItem).length);
+    }
+    
+  }, [brand, indexOfFirstItem, indexOfLastItem])
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  }
+
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [brand])
+
+
+  // console.log(currentItem);
+  // console.log(indexOfLastItem);
+  // console.log(indexOfFirstItem);
+  // console.log(currentItem.length);
+  console.log(currentlength);
+
+
   return (
+
     <>
       <Navbar />
       <section className="cart-container">
@@ -50,41 +75,28 @@ const CartContainer = () => {
           </header>
 
           <div className="search-area">
-            <Search brand={brand} handleChange={handleChange}
-              search={search} handleChangeSearch={handleChangeSearch}
-              sort={sort} handleChangeSort={handleChangeSort}
-            />
-
+            <Search />
           </div>
 
           <article >
 
             {
-        
-              (brand === 'All') ? (
-                CartItems.sort((a, b) => handleSort(a.price, b.price)).map(item => {
-                  if (item.title.toUpperCase().indexOf(search.toUpperCase()) !== -1) {
-                    return (
-                      <CartItem key={item.id} {...item} id={item.id}/>
-                    );
-                  }
-                  return null;
-                })
 
-              ) : (
-         
-                  CartItems.sort((a, b) => handleSort(a.price, b.price)).map(item => {
-                    if (item.brand === brand && item.title.toUpperCase().indexOf(search.toUpperCase()) !== -1) {
-                      return (
-                        <CartItem key={item.id} {...item} />
-                      );
-                    }
-                    return null;
-                  })
-                ) 
+              currentItem.sort((a, b) => handleSort(a.price, b.price)).map(item => {
+
+                if ((item.brand === brand || brand === 'All') && item.title.toUpperCase().indexOf(search.toUpperCase()) !== -1) {
+                  
+                  return (
+                    <CartItem key={item.id} {...item} id={item.id}/>
+                  );
+                }
+                return null;
+              })
             }
-          </article>
 
+          </article>
+          
+          <Pagination itemsPerPage={itemsPerPage} totalItems={currentlength} paginate={paginate} />
 
         </div>
 
@@ -92,9 +104,13 @@ const CartContainer = () => {
       <footer>
         <Footer />
       </footer>
-      
+
     </>
   );
 };
+const mapStateToProps = store => {
+  const { brand, search, sort } = store;
+  return { brand, search, sort };
+}
 
-export default CartContainer;
+export default connect(mapStateToProps)(CartContainer);

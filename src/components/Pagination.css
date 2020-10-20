@@ -1,0 +1,30 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 2rem;
+}
+ 
+.page {
+    margin: .1rem;
+}
+
+.page button {
+    /* color: black; */
+
+    padding: 8px 16px;
+    text-decoration: none;
+
+}
+  
+.pagination button {
+    border:1px #5fb7ea solid;
+    color: black;
+    cursor: pointer;
+}
+  
+.pagination button:hover {
+    background-color: #5fb7ea;
+    transform: scale(1.1); 
+
+}
